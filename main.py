@@ -4,6 +4,7 @@ Created on Sat May 11 12:34:55 2019
 
 @author: Stephanie
 """
+
 from SpeechRecognition import command
 from TextToSpeech import gtalk
 from Answer import cheak

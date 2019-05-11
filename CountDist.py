@@ -11,6 +11,7 @@ word-слово из вопроса
 quest_num-список расстояний между каждым словом из текущего вопроса и словом из вопроса из списка
 question_koef-список расстояний между текущим вопросом и всеми остальными
 """
+
 from Levenshtien import distance
 
 def count_distance(current_question, questions):
@@ -38,5 +39,4 @@ def count_distance(current_question, questions):
         i+=1
 #       нахождение расстояния по фразам и прибавление
 
-#    print(question_koef, min(question_koef))
     return question_koef.index(min(question_koef)), min(question_koef)#предсказаный вопрос
