@@ -6,9 +6,9 @@ Created on Mon May  6 17:33:00 2019
 """
 from TextToSpeech import talk
 import speech_recognition as sr
-import os
-import sys
-import webbrowser
+#import os
+#import sys
+#import webbrowser
 
 """ 
 	Функция command() служит для отслеживания микрофона.
