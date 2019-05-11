@@ -4,6 +4,7 @@ Created on Mon May  6 17:33:00 2019
 
 @author: Stephanie
 """
+from TextToSpeech import talk
 import speech_recognition as sr
 import os
 import sys

@@ -25,8 +25,8 @@ vals = [sheet.row_values(rownum) for rownum in range(sheet.nrows)]
 questions=[vals[rownum][0] for rownum in range(13)]
 answers=[vals[rownum][1] for rownum in range(13)]
    
-#current_question=command()
-current_question="где корпус"
+current_question=command()
+#current_question="какие привелегии"
 quest_num,question_koef=[],[]
 
 for cur_word in current_question.split():
@@ -34,7 +34,7 @@ for cur_word in current_question.split():
         _n=0
         for word in question.split():
             _n=_n+distance(cur_word, word)
-        quest_num.append(_n)
+        quest_num.append(_n/len(question))
         #находим расстояние между каждым словом cur_question и всеми вопросами
 
 
@@ -45,17 +45,19 @@ for i in range(size):
     for j in range(len(current_question.split())):
         question_koef[i]+=quest_num[i]
 #        нахождение расстояния по словам для вопросов
+#print(question_koef)
         
 i=0
 for question in questions:
-    question_koef[i]+=distance(current_question, question)
+    question_koef[i]+=(distance(current_question, question)/len(question))
     i+=1
 #   нахождение расстояния по фразам и прибавление
+print(question_koef)
 
 
 pred_quest_num=question_koef.index(min(question_koef))#предсказаный вопрос
-#print("вы сказали:", questions[pred_quest_num], "?")
-#print(answers[pred_quest_num])
+print("вы сказали:", questions[pred_quest_num], "?")
+print(answers[pred_quest_num])
 
 gtalk(answers[pred_quest_num])#произносим ответ
            
