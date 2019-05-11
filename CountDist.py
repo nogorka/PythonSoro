@@ -13,8 +13,6 @@ question_koef-список расстояний между текущим воп
 """
 from Levenshtien import distance
 
-
-
 def count_distance(current_question, questions):
     quest_num,question_koef=[],[]
     
@@ -40,5 +38,5 @@ def count_distance(current_question, questions):
         i+=1
 #       нахождение расстояния по фразам и прибавление
 
-    print(question_koef, min(question_koef))
-    return question_koef.index(min(question_koef))#предсказаный вопрос
+#    print(question_koef, min(question_koef))
+    return question_koef.index(min(question_koef)), min(question_koef)#предсказаный вопрос
