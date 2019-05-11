@@ -26,7 +26,7 @@ questions=[vals[rownum][0] for rownum in range(13)]
 answers=[vals[rownum][1] for rownum in range(13)]
    
 #current_question=command()
-current_question="рядом магазины"
+current_question="какая стипендия"
 quest_num,question_koef=[],[]
 
 for cur_word in current_question.split():
