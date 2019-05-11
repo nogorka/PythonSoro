@@ -26,7 +26,7 @@ questions=[vals[rownum][0] for rownum in range(13)]
 answers=[vals[rownum][1] for rownum in range(13)]
    
 #current_question=command()
-current_question="какая стипендия"
+current_question="где корпус"
 quest_num,question_koef=[],[]
 
 for cur_word in current_question.split():
@@ -44,14 +44,20 @@ for i in range(size):
     question_koef.append(0)
     for j in range(len(current_question.split())):
         question_koef[i]+=quest_num[i]
+#        нахождение расстояния по словам для вопросов
+        
+i=0
+for question in questions:
+    question_koef[i]+=distance(current_question, question)
+    i+=1
+#   нахождение расстояния по фразам и прибавление
+
 
 pred_quest_num=question_koef.index(min(question_koef))#предсказаный вопрос
-print("вы сказали:", questions[pred_quest_num], "?")
+#print("вы сказали:", questions[pred_quest_num], "?")
+#print(answers[pred_quest_num])
 
-
-print(answers[pred_quest_num])
-
-gtalk(answers[pred_quest_num])
+gtalk(answers[pred_quest_num])#произносим ответ
            
         
         
