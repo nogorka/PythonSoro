@@ -11,7 +11,7 @@ import requests
 
 #если вопрос не предзадан
 def other(current_question):
-    SERVER_URL = "http://192.168.43.143:8000/answer"
+    SERVER_URL = "http://194.176.114.13:25565/answer"
     r =requests.post(SERVER_URL, data={'question': current_question})
     answer = r.json()
     return answer
@@ -22,6 +22,7 @@ def cheak(current_question, questions, answers):
 #   номер предсказанного вопроса и значение
 
     two_sent_pointer=distance(current_question, questions[pred_quest_num])/len(questions[pred_quest_num])
+#   расстояния для текущего вопроса и итого вопроса из базы
     
 #   счетчик переходы между предзадаными вопросами и не предзаданными
     if (two_sent_pointer < 0.6) or (pred_quest_val < 3):

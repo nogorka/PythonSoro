@@ -32,7 +32,6 @@ def count_distance(current_question, questions):
         for j in range(len(current_question.split())):
             question_koef[i]+=quest_num[i]
 #           нахождение расстояния по словам для вопросов
-            
     i=0
     for question in questions:
         question_koef[i]+=(distance(current_question, question)/len(question))
