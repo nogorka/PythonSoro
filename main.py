@@ -8,6 +8,7 @@ Created on Sat May 11 12:34:55 2019
 from SpeechRecognition import command
 from TextToSpeech import *
 from Answer import cheak
+from GIFsearch import *
 import xlrd
 import time
   
@@ -28,7 +29,7 @@ while flag==True:
     
 #    current_question=command()
 #    current_question="не хочу жить, что будет когда я умру?"
-#    current_question="магазины где"
+    current_question="где в корпусе столовая"
     
     for goodbye in goodbyes:
         if current_question==goodbye: 
@@ -37,7 +38,9 @@ while flag==True:
             break
 #           выход из общения     
         
-    answer=cheak(current_question, questions, answers)      
+    answer=cheak(current_question, questions, answers) 
+    emoji=search(answer)
+    print(emoji)
     print(answer)
 #    say(answer)
     time.sleep(5)
