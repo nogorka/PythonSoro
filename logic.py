@@ -17,8 +17,8 @@ def logics():
     vals = [sheet.row_values(rownum) for rownum in range(sheet.nrows)]
 
     #списки вопросов и ответов и выход из общения
-    questions=[vals[rownum][0] for rownum in range(14)]
-    answers=[vals[rownum][1] for rownum in range(14)]
+    questions=[vals[rownum][0] for rownum in range(20)]
+    answers=[vals[rownum][1] for rownum in range(20)]
     goodbyes=[vals[rownum][2] for rownum in range(12)]
 
 
