@@ -22,19 +22,22 @@ def logics():
     goodbyes=[vals[rownum][2] for rownum in range(12)]
 
 
-    #current_question=command()
+    current_question=command()
     #current_question="не хочу жить, что будет когда я умру?"
-    current_question="где в корпусе столовая"
+    #current_question="где в корпусе столовая"
 
     #say("Привет, чем я могу помочь вам?")
     answer = cheak(current_question, questions, answers)
-
+    
     emoji = search(answer)
 
     name = gtalk(answer)
-    #print(emoji, name)
-    return emoji, name
+    
+    print(emoji, name, answer)
+    print("teacher_emoji/"+emoji+".gif")
+    return emoji, name, answer
 
+logics()
  #   def goodbye():
   #
    #     for goodbye in goodbyes:

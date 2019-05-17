@@ -1,6 +1,8 @@
 import pygame
 import GIFImage
-from main import *
+import time
+from TextToSpeech import say
+from logic import logics
 
 display_width = 800
 display_height = 600
@@ -37,7 +39,7 @@ def play_sound(filename):
 image.running = True
 display.fill((255, 255, 255))
 
-c_emoji="base.jpg"
+c_emoji="улыбка"
 while progress:
 
     for event in pygame.event.get():
@@ -47,22 +49,16 @@ while progress:
             pygame.quit()
             quit()
 
-        #
-        # Здесь нужно сделать условие и в нем изменить картинку
-        # Как написано ниже
-        #
-        emoji, sound_name = logics()
+
+#        play_sound(sound_name)  #from pygame
+#        say(answer)#from tts
+            
+        emoji, sound_name, answer= logics()
         if c_emoji!= emoji:
             c_emoji=emoji
             change_image("teacher_emoji/"+c_emoji+".gif")
 
-#        if event.type == pygame.KEYDOWN:
-#            change_image("Учитель(удивление)1.2.gif")
-
-        # Звук можно добавить так
-
-        play_sound(sound_name)
-
+        time.sleep(5)
     image.render(display, (50, 50))
 
     pygame.display.update()
