@@ -1,5 +1,6 @@
 import pygame
 import GIFImage
+from main import *
 
 display_width = 800
 display_height = 600
@@ -14,7 +15,7 @@ progress = True
 
 clock = pygame.time.Clock()
 
-image = GIFImage.GIFImage("Уточка1.2.gif")
+image = GIFImage.GIFImage("teacher_emoji/улыбка.gif")
 
 
 def change_image(new_image):
@@ -36,7 +37,7 @@ def play_sound(filename):
 image.running = True
 display.fill((255, 255, 255))
 
-
+c_emoji="base.jpg"
 while progress:
 
     for event in pygame.event.get():
@@ -50,14 +51,17 @@ while progress:
         # Здесь нужно сделать условие и в нем изменить картинку
         # Как написано ниже
         #
+        emoji, sound_name = logics()
+        if c_emoji!= emoji:
+            c_emoji=emoji
+            change_image("teacher_emoji/"+c_emoji+".gif")
 
-        if event.type == pygame.KEYDOWN:
-            change_image("Учитель(удивление)1.2.gif")
+#        if event.type == pygame.KEYDOWN:
+#            change_image("Учитель(удивление)1.2.gif")
 
-        #
         # Звук можно добавить так
-        #
-        # play_sound("sound.mp3")
+
+        play_sound(sound_name)
 
     image.render(display, (50, 50))
 

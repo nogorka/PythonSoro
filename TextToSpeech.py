@@ -13,9 +13,11 @@ def talk(words):
 
 def gtalk(words):
     tts = gTTS(text=words, lang="ru", lang_check = False)
-    tts.save("good.mp3")
-    #os.system("mpg321 good.mp3")
-    os.startfile("good.mp3")
+    filename="sound.mp3"
+    tts.save(filename)
+    return filename
+#   os.system("mpg321 good.mp3")
+#   os.startfile("good.mp3")
 
 def say(words):   
     import pyttsx3
