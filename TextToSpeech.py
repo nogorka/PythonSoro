@@ -8,8 +8,11 @@ Created on Fri May 10 18:43:13 2019
 from gtts import gTTS
 import os
 
-def talk(words):
-	os.system("say " + words)
+def talk(filename):
+#	os.system("say " + words)
+#   os.system("mpg321 good.mp3")
+   os.startfile(filename)
+
 
 def gtalk(words):
     tts = gTTS(text=words, lang="ru", lang_check = False)

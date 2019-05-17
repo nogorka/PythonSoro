@@ -23,8 +23,8 @@ def logics():
 
 
     current_question=command()
-    #current_question="не хочу жить, что будет когда я умру?"
-    #current_question="где в корпусе столовая"
+#    current_question="не хочу жить, что будет когда я умру?"
+#    current_question="где в корпусе столовая"
 
     #say("Привет, чем я могу помочь вам?")
     answer = cheak(current_question, questions, answers)
@@ -34,14 +34,18 @@ def logics():
     name = gtalk(answer)
     
     print(emoji, name, answer)
-    print("teacher_emoji/"+emoji+".gif")
+#    print("teacher_emoji/"+emoji+".gif")
     return emoji, name, answer
 
-logics()
- #   def goodbye():
-  #
-   #     for goodbye in goodbyes:
-    #        if current_question==goodbye:
-     #           answer = gtalk(goodbye, "жду тебя в следующий раз")
-      #          flag = False
-        #break
+
+if __name__ == "__main__":
+    logics()
+    
+    
+#    def goodbye():
+#  
+#        for goodbye in goodbyes:
+#            if current_question==goodbye:
+#                answer = gtalk(goodbye, "жду тебя в следующий раз")
+#                flag = False
+#        break
