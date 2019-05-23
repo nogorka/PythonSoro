@@ -26,20 +26,20 @@ def logics():
 #    current_question="не хочу жить, что будет когда я умру?"
 #    current_question="где в корпусе столовая"
 
-    #say("Привет, чем я могу помочь вам?")
+#    say("Привет, чем я могу помочь вам?")
     answer = cheak(current_question, questions, answers)
     
-    emoji = search(answer)
-
+    emoji, answer = search(answer)
+    
     name = gtalk(answer)
     
-    print(emoji, name, answer)
+#    print(emoji, name, answer)
 #    print("teacher_emoji/"+emoji+".gif")
     return emoji, name, answer
 
 
 if __name__ == "__main__":
-    logics()
+    print(logics())
     
     
 #    def goodbye():
