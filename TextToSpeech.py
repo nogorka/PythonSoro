@@ -15,8 +15,10 @@ def talk(filename):
 
 
 def gtalk(words):
+    if words == "":
+        words = "А"
     tts = gTTS(text=words, lang="ru", lang_check = False)
-    filename="sound.mp3"
+    filename="%i.mp3" % hash(words)
     tts.save(filename)
     return filename
 #   os.system("mpg321 good.mp3")
